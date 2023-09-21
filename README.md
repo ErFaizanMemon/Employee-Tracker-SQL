@@ -38,6 +38,6 @@ THEN I am prompted to select an employee to update and their new role and this i
 
 Github Link - https://github.com/ErFaizanMemon/Employee-Tracker-SQL
 
-Video Link - 
+Video Link - https://github.com/ErFaizanMemon/Employee-Tracker-SQL/blob/master/Walkthrough.mkv
 
 Webpage Link - https://erfaizanmemon.github.io/Employee-Tracker-SQL/
