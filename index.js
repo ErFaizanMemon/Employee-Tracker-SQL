@@ -1,13 +1,13 @@
 // Import required libraries and modules
 const mysql = require('mysql2');
-const inquiry = require('inquirer');
+const inquirer = require('inquirer');
 //const config = require('./package.json');
 
 // Create a database connection
 const connection = mysql.createConnection({
   host: 'localhost',
   user: 'root',
-  password: '',
+  password: 'Faizan013',
   database: 'employees_db',
 });
 
@@ -37,56 +37,39 @@ const menuQuestions = [
 
 // Function to start the application
 function startApp() {
-  inquiry.prompt(menuQuestions)
+  inquirer.prompt(menuQuestions)
     .then((response) => {
-      // switch (response.action) {
+      switch (response.action) {
         
-      //   // Handle different menu options
-      //   case 'View All Employees':
-      //     viewAllEmployees();
-      //     break;
-      //   case 'View All Roles':
-      //     viewAllRoles();
-      //     break;
-      //   case 'View All Departments':
-      //     viewAllDepartments();
-      //     break;
-      //   case 'Add Employee':
-      //     addEmployee();
-      //     break;
-      //   case 'Add Role':
-      //     addRole();
-      //     break;
-      //   case 'Add Department':
-      //     addDepartment();
-      //     break;
-      //   case 'Update Employee Role':
-      //     updateEmployeeRole();
-      //     break;
-      //   case 'QUIT':
-      //     process.exit();
+        // Handle different menu options
+        case 'View All Employees':
+          viewAllEmployees();
+          break;
+        case 'View All Roles':
+          viewAllRoles();
+          break;
+        case 'View All Departments':
+          viewAllDepartments();
+          break;
+        case 'Add Employee':
+          addEmployee();
+          break;
+        case 'Add Role':
+          addRole();
+          break;
+        case 'Add Department':
+          addDepartment();
+          break;
+        case 'Update Employee Role':
+          updateEmployeeRole();
+          break;
+        case 'QUIT':
+          process.exit();
           
-      //   default:
-      //     console.log('Invalid option. Please try again.');
-      //     startApp();
-      //     break;
-      // }
-      if (response.action === 'View All Employees') {
-        viewAllEmployees();
-      } else if (response.action === 'View All Roles') {
-        viewAllRoles();
-      } else if (response.action === 'View All Departments') {
-        viewDepartments();
-      } else if (response.action === 'Add Employee') {
-        addEmployee();
-      } else if (response.action === 'Add Role') {
-        addRole();
-      } else if (response.action === 'Add Department') {
-        addDepartment();
-      } else if (response.action === 'Update Role for Employee') {
-        updateEmployeerole();
-      } else if (response.action === 'QUIT') {
-        process.exit();
+        default:
+          console.log('Invalid option. Please try again.');
+          startApp();
+          break;
       }
     })
     .catch((err) => {
@@ -95,7 +78,7 @@ function startApp() {
 }
 
 // Start the application
-startApp();
+//startApp();
 
 // Function to view all employees
 function viewAllEmployees() {
